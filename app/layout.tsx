@@ -2,6 +2,8 @@ import type {Metadata} from "next"
 import {Montserrat} from "next/font/google"
 import "./globals.css"
 import React from "react";
+import {Header} from "@/structure/components/shared/header";
+import {ThemeProvider} from "@/structure/components/providers/theme-provider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -22,8 +24,19 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
+      suppressHydrationWarning
     >
-    <body className={`${montserrat.variable} antialiased`}>{children}</body>
+    <body className={`${montserrat.variable} antialiased`}>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <Header />
+      {children}
+    </ThemeProvider>
+    </body>
     </html>
   )
 }
