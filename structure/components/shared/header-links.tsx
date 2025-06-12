@@ -6,7 +6,7 @@ export const HeaderLinks: React.FC = () => {
   return (
     <>
       <div className="flex items-center gap-10">
-        <Link href="/public">
+        <Link href="/">
           <Image
             className="block dark:hidden"
             src="/logo-dark.svg"
