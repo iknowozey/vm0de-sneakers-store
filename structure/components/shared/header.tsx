@@ -7,6 +7,7 @@ import {
   ButtonToggleTheme,
   LoginButton,
   BasketButton,
+  TopBar
 } from "./index"
 
 
@@ -37,6 +38,7 @@ export const Header: React.FC<Props> = ({className}) => {
             </div>
           </header>
         </Container>
+        <TopBar />
       </div>
     </>
   )
